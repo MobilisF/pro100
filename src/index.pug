@@ -1,0 +1,50 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+	head(lang="en")
+		include pug/metatags.pug
+		+title('cart-shop for pro100')
+		include pug/styles.pug
+		script(src="https://use.fontawesome.com/3575c34579.js")
+	body
+		include pug/svg.pug
+
+		.shop
+			mixin prod (image, name, bill, coin, star, description)
+				section.product
+					.product_image
+						img(src=image alt="")
+					.product_title
+						h2=name
+					.product_block.block
+						.block_price
+							.block_cy $
+							.block_bill=bill
+							.block_pt .
+							.block_coin=coin
+						button.block_cart Add to Cart
+				section.stars
+					.stars_line
+					.stars_pt
+						- const x = star;
+							- for (var i=1; i<=x; i++) {
+								i.fa.fa-star
+							- }
+					.stars_line
+				section.alt
+					p=description
+			.product
+				+prod('images/1.png', 'Coalesce: Functioning On Impatience T-Shirt', '15', '00', '3', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go! Looking for some color to brighten up you today? Check out the cotton sundresses.")
+				+prod('images/2.png', 'Ink Eater: Krylon Bombear Destroyed Tee', '22', '00', '5', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go! ")
+				+prod('images/3.png', 'The Only Children: Paisley T-Shirt', '55', '00', '1', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! ")
+				+prod('images/4.png', 'The Only Adult: Paisley T-Shirt', '15', '00', '3', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go!")
+				+prod('images/5.png', 'Zolof The Rock And Roll Destroyer: LOL Cat T-shirt', '13', '50', '5', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go!")
+				+prod('images/6.png', 'The Get Up Kids: Band Camp Pullover Hoodie', '12', '30', '1', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! ")
+				+prod('images/7.png', "Kenneth Cole New York Men's Con-verge Slip-on", '169', '99', '3', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go!")
+				+prod('images/8.png', "ASICS® Men's GEL- Kayano® XII", '134', '99', '5', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go!")
+				+prod('images/9.png', 'CN Clogs Beach/ Garden Clog', '15', '99', '1', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! ")
+
+
+		include pug/scripts.pug
