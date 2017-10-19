@@ -3,20 +3,50 @@
 	margin: 0
 	padding: 0
 
+//extend
 .container
-	width: 155px
+	width: 159px
 	padding: 10px
 
+//main
 .shop
-	max-width: 870px
+	display: flex
+	flex-wrap: wrap
+	overflow: hidden
+	max-width: 478px
+	width: 100%
 	margin: 0 auto
 	font-family: 'Arial', sans-serif
 
+
 .product
+	position: relative
+	width: 159px
+	height: auto
+	margin-bottom: 10px
+	border: 3px solid transparent
+
+.product.active .to_cart
+	box-shadow: inset 0 0 7px rgba(0,0,0,0.5)
+	transform: scale(.95)
+
+.product.active .block_cart
+	background: #eb5c3e
+
+.product.active
+	border: 3px solid #eb5c3e
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22)
+
+.good
 	@extend .container
 
+.product_image
+	cursor: pointer
+
 .product_title
+	height: 30px
 	margin: 10px 0 20px 1px
+	cursor: pointer
 
 	>h2
 		font-size: 0.8125rem
@@ -25,8 +55,7 @@
 .product_block
 	display: flex
 	justify-content: space-between
-	margin: 25px 1px 4px 1px
-
+	margin: 27px 1px 4px 1px
 
 .block_price
 	display: flex
@@ -34,8 +63,6 @@
 
 .block_cy
 	font-size: 0.8125rem
-
-.bold-text
 
 .block_bill
 	font:
@@ -51,13 +78,20 @@
 .block_cart
 	width: 74px
 	height: 30px
+	margin-right: 5px
 	font-size: 0.75rem
 	color: #fff
 	background: #3a3a3a
+	cursor: pointer
+
+.block_cart:hover
+	background: #eb5c3e
+	transition: background 0.1s ease
 
 .stars
-	display: flex
 	@extend .container
+	display: flex
+	
 
 .stars_line
 	width: 100%
@@ -77,14 +111,32 @@
 .fa-star
 	margin: 0 1px
 
+.product.active .fa-star
+	color: #eb5c3e
+
 .alt
-	@extend .container
+	width: 159px
+	padding: 10px
+	display: none
+	position: absolute
+	background: #fff
 	>p
 		font-size: 0.6875rem
 		color: #636363
+		line-height: 0.89rem
 
+.product.active .alt
+	position: absolute
+	margin-left: -3px
+	z-index: 1
+	border-left: 3px solid #eb5c3e
+	border-right: 3px solid #eb5c3e
+	border-bottom: 3px solid #eb5c3e
+	box-shadow: 0 14px 10px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22)
 
-
+@media screen and (max-width: 470px)
+	.shop
+		justify-content: space-around
 
 
 
