@@ -10,7 +10,6 @@ html
 		script(src="https://use.fontawesome.com/3575c34579.js")
 	body
 		include pug/svg.pug
-
 		.shop
 			mixin prod (image, name, bill, coin, star, description)
 				section.good
@@ -58,6 +57,14 @@ html
 				+prod('images/8.png', "ASICS® Men's GEL- Kayano® XII", '134', '99', '5', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! So, why not start with a sundress? They always brighten up the environment around you and inspire positivity wherever you go!")
 			.product
 				+prod('images/9.png', 'CN Clogs Beach/ Garden Clog', '15', '99', '1', "When you're dress-hunting, you want to find somethig that's fun, comfortable, flattering, and uniquely you! ")
+
+
+		.slider
+			.reveal.circuit
+				.reveal-left
+				.reveal-right
+
+
 
 
 		include pug/scripts.pug

@@ -38,3 +38,11 @@ $(document).ready(function(){
 		})
 	}
 })
+
+$(document).ready(function(){
+	$('.reveal').click(function(){
+		$(this).toggleClass('go').siblings('.reveal').removeClass('go');
+		console.log ('click');
+	})
+ 
+})

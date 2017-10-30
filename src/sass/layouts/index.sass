@@ -16,6 +16,7 @@
 	max-width: 478px
 	width: 100%
 	margin: 0 auto
+	padding-bottom: 200px
 	font-family: 'Arial', sans-serif
 
 
@@ -91,7 +92,7 @@
 .stars
 	@extend .container
 	display: flex
-	
+
 
 .stars_line
 	width: 100%
@@ -139,6 +140,67 @@
 		justify-content: space-around
 
 
+
+//SLIDER
+
+.slider
+	width: 100vw
+	height: 100vh
+	margin: 30px auto
+
+
+.reveal
+	position: relative
+	max-width: 960px
+	width: 100%
+	max-height: 540px
+	height: 100%
+	margin: 10px auto
+
+	background-size: cover
+	background: red
+
+.reveal-left, .reveal-right 
+	position: absolute
+	height: 540px
+	height: 100%
+	max-width: 960px
+	width: 50%
+
+	background-size: cover
+
+.reveal-left
+	left: 0
+
+.reveal:hover .reveal-left
+	left: -50%
+
+.reveal-right
+	left: 50%
+	background-position: 100% 0
+
+.reveal:hover .reveal-right
+	left: 100%
+
+.reveal-left,
+.reveal-right
+	transition: left 1.4s ease
+
+
+.circuit
+	width: 960px
+	height: 540px
+	background-image: url('../images/red.png')
+	overflow: hidden
+	background-size: cover
+
+
+.circuit .reveal-left,
+.circuit .reveal-right
+	background-image: url('../images/blue.png')
+	background-repeat: no-repeat
+	background-size: cover
+	overflow: hidden
 
 
 
